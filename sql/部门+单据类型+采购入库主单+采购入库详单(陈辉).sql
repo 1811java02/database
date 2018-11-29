@@ -1,6 +1,6 @@
 CREATE TABLE T_Department
 (
-  DepartID	Varchar(20) PRIMARY KEY,
+  DepartID	Varchar(20) NOT NULL PRIMARY KEY,
   DepartName	Varchar(20) NOT NULL,
   EngName	Varchar(20),
   Memo	Varchar(255)
@@ -24,9 +24,9 @@ SELECT  * FROM T_Department;
 
 CREATE TABLE T_BillType
 (
-  ClassID	Varchar(20),
+  ClassID	Varchar(20) NOT NULL,
   ClassName	Varchar(20) NOT NULL,
-  BillType	Varchar(20),
+  BillType	Varchar(20) NOT NULL,
   EngName	Varchar(20),
   Memo	Varchar(255),
   CONSTRAINT PK_Union_Bill_Type PRIMARY KEY (ClassID,BillType)
@@ -53,7 +53,7 @@ SELECT  * FROM T_BillType;
 
 CREATE TABLE T_Purchase_Master
 (
-  BillNO	Varchar(20) PRIMARY KEY,
+  BillNO	Varchar(20) NOT NULL PRIMARY KEY,
   BillDate	Date NOT NULL,
   CustID	Varchar(20) NOT NULL,
   CustName	Varchar(20),
@@ -116,7 +116,7 @@ SELECT  * FROM T_Purchase_Master;
 
 CREATE TABLE T_Purchase_Detail
 (
-  LineID	Number(22) PRIMARY KEY,
+  LineID	Number(22) NOT NULL PRIMARY KEY,
   BillNO	Varchar(20) NOT NULL,
   ProdID	Varchar(20) NOT NULL,
   ProdName	Varchar(20) NOT NULL,
