@@ -22,7 +22,7 @@ FermitterSign varchar2(20),
 Remarks varchar2(255),
 Type Number(1)
 );
-select * from RushPayable_main
+
 
 INSERT into t_RushPayable(FundBillID,FundBillDate,CustomerID,CustomerName,CashStyleName,Cash,VisaStyleName,Visa,OtherPayStyleName,OtherPay,BCurrencyName,ExchangeRate,DiscountPer,AccMonthToMonth,VoucherNo,DepartNameFrom,MakerSign,ProjectFrom,FermitterSign,Remarks) 
 VALUES('2018112903',TO_DATE('2018-11-29','yyyy-mm-dd hh24:mi:ss'),'01','株洲科嘉电脑城','现金','1000.00','','','','','RMB','1.000','0',TO_DATE('2018-11-29','yyyy-mm-dd hh24:mi:ss'),'','采购部','牛采购','','朱会计','');
@@ -45,7 +45,7 @@ Offsetamount Number(*,2),
 Allowanceamount Number(*,2)
 
 );
-select * from RushPayable_detailed
+
 
 INSERT into t_RushPayable_detailed(FundBillID,Linenumber,Sourcelist,Sourcenumber,BCurrencyName,Originalamount,Currentamount,Moneycharged,Offsetamount,Allowanceamount) 
 VALUES('2018112901','1','进货','2018112902','RMB','1000.00','1000.00','200.00','0.00','0.00');
@@ -98,7 +98,7 @@ FermitterSign varchar2(20),
 Remarks varchar2(255),
 Type Number(1)
 );
-select * from RushPayable_main
+
 
 INSERT into t_AdvanceCharge(FundBillID,FundBillDate,CustomerID,CustomerName,CashStyleName,Cash,VisaStyleName,Visa,OtherPayStyleName,OtherPay,BCurrencyName,ExchangeRate,DiscountPer,AccMonthToMonth,VoucherNo,DepartNameFrom,MakerSign,ProjectFrom,FermitterSign,Remarks) 
 VALUES('2018112903',TO_DATE('2018-11-29','yyyy-mm-dd hh24:mi:ss'),'01','株洲科嘉电脑城','现金','1000.00','','','','','RMB','1.000','0',TO_DATE('2018-11-29','yyyy-mm-dd hh24:mi:ss'),'','采购部','牛采购','','朱会计','');
