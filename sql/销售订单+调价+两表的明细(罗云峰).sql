@@ -1,3 +1,4 @@
+/*调价单*/
 create table t_ modifyprice
 (
   ModPriceNo varchar(20) not null primary key,
@@ -13,7 +14,7 @@ create table t_ modifyprice
   ModPricestate number(1)
 );
 
-
+/*调价明细表*/
 create table t_ detail_ modifyprice
 (
   ModPriceNo	Varchar(20) not null primary key,
@@ -50,7 +51,7 @@ create table t_ detail_ modifyprice
   WhMemo	Varchar(20)
 );
 
-
+/*销售订单表*/
 create table t_ salesorder
 (
   BillNO	Varchar(20) not null primary key,
@@ -71,7 +72,7 @@ create table t_ salesorder
   Permitter	Varchar(20) not null
 );
 
-
+/*销售订单明细表*/
 create table t_ detail _ salesorder
 (
   ModPriceNo	Varchar(20) not null primary key,
