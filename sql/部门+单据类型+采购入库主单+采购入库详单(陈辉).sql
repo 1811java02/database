@@ -1,11 +1,12 @@
 CREATE TABLE T_Department
 (
-  DepartID	Varchar(20) NOT NULL PRIMARY KEY,
+  DepartID	Varchar(20)  NOT NULL PRIMARY KEY,
   DepartName	Varchar(20) NOT NULL,
   EngName	Varchar(20),
   Memo	Varchar(255)
 );
 
+COMMENT ON TABLE T_Department is '部门表';
 COMMENT ON  COLUMN  T_Department.DepartID   is  '部门编号';
 COMMENT ON  COLUMN  T_Department.DepartName   is  '部门名称';
 COMMENT ON  COLUMN  T_Department.EngName   is  '部门英文名称';
@@ -32,6 +33,7 @@ CREATE TABLE T_BillType
   CONSTRAINT PK_Union_Bill_Type PRIMARY KEY (ClassID,BillType)
 );
 
+COMMENT ON TABLE T_BillType is '单据类型表';
 COMMENT ON  COLUMN  T_BillType.ClassID   is  '类型编号';
 COMMENT ON  COLUMN  T_BillType.ClassName   is  '类型名称';
 COMMENT ON  COLUMN  T_BillType.BillType   is  '单据类别名称';
@@ -83,6 +85,7 @@ CREATE TABLE T_Purchase_Master
   EamineState	Number(1) DEFAULT 0 NOT NULL
 );
 
+COMMENT ON TABLE T_Purchase_Master is '采购入库主表';
 COMMENT ON  COLUMN  T_Purchase_Master.BillNO   is  '单据编号';
 COMMENT ON  COLUMN  T_Purchase_Master.BillDate   is  '单据日期';
 COMMENT ON  COLUMN  T_Purchase_Master.CustID   is  '供应商编号';
@@ -137,6 +140,7 @@ CREATE TABLE T_Purchase_Detail
   MLAmount	Number(*,2) DEFAULT 0.00 NOT NULL
 );
 
+COMMENT ON TABLE T_Purchase_Master is '采购入库详表';
 COMMENT ON  COLUMN  T_Purchase_Detail.LineID   is  '行号';
 COMMENT ON  COLUMN  T_Purchase_Detail.BillNO   is  '主单单据号码';
 COMMENT ON  COLUMN  T_Purchase_Detail.ProdID   is  '物料编号';
