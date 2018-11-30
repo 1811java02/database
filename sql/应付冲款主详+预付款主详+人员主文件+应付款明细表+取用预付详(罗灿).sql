@@ -20,6 +20,7 @@ MakerSign varchar2(20),
 ProjectFrom varchar2(20),
 FermitterSign varchar2(20),
 Remarks varchar2(255)
+Type Number(1)
 );
 select * from RushPayable_main
 
@@ -95,6 +96,7 @@ MakerSign varchar2(20),
 ProjectFrom varchar2(20),
 FermitterSign varchar2(20),
 Remarks varchar2(255)
+Type Number(1)
 );
 select * from RushPayable_main
 
