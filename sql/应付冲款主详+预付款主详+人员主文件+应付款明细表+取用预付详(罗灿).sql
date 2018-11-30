@@ -1,4 +1,4 @@
-//应付冲款主表（t_RushPayable）
+--应付冲款主表（t_RushPayable）
 create table t_RushPayable(
 FundBillID  varchar2(20)  primary key,
 FundBillDate date,
@@ -19,7 +19,7 @@ DepartNameFrom varchar2(20),
 MakerSign varchar2(20),
 ProjectFrom varchar2(20),
 FermitterSign varchar2(20),
-Remarks varchar2(255)
+Remarks varchar2(255),
 Type Number(1)
 );
 select * from RushPayable_main
@@ -31,7 +31,7 @@ VALUES('2018112902',TO_DATE('2018-11-29','yyyy-mm-dd hh24:mi:ss'),'01','株洲中房
 
 
 
-//应付冲款详表（t_RushPayable_detailed）
+--应付冲款详表（t_RushPayable_detailed）
 create table t_Rushpayable_detailed(
 FundBillID  varchar2(20)  primary key,
 Linenumber int,
@@ -54,7 +54,7 @@ VALUES('2018112902','2','进货','2018112903','RMB','9999.00','9999.00','1000.00',
 
 
 
-//取用预付冲应付详表(t_Prepaid_detailed)
+--取用预付冲应付详表(t_Prepaid_detailed)
 create table t_Prepaid_detailed(
 FundBillID  varchar2(20)  primary key,
 Linenumber int,
@@ -74,7 +74,7 @@ INSERT into t_Prepaid_detailed(FundBillID,Linenumber,Sourcelist,Sourcenumber,Sou
 VALUES('2018112902','2','进货','2018112803','进货','2018112904','1000.00','300.00','取用支付30%的定金');
 
 
-//预付款主表（t_AdvanceCharge）
+--预付款主表（t_AdvanceCharge）
 create table t_AdvanceCharge(
 FundBillID  varchar2(20)  primary key,
 FundBillDate date,
@@ -95,7 +95,7 @@ DepartNameFrom varchar2(20),
 MakerSign varchar2(20),
 ProjectFrom varchar2(20),
 FermitterSign varchar2(20),
-Remarks varchar2(255)
+Remarks varchar2(255),
 Type Number(1)
 );
 select * from RushPayable_main
@@ -105,7 +105,7 @@ VALUES('2018112903',TO_DATE('2018-11-29','yyyy-mm-dd hh24:mi:ss'),'01','株洲科嘉
 INSERT into t_AdvanceCharge(FundBillID,FundBillDate,CustomerID,CustomerName,CashStyleName,Cash,VisaStyleName,Visa,OtherPayStyleName,OtherPay,BCurrencyName,ExchangeRate,DiscountPer,AccMonthToMonth,VoucherNo,DepartNameFrom,MakerSign,ProjectFrom,FermitterSign,Remarks) 
 VALUES('2018112902',TO_DATE('2018-11-29','yyyy-mm-dd hh24:mi:ss'),'01','株洲中房电脑城','现金','9999.00','','','','','RMB','1.000','0',TO_DATE('2018-11-29','yyyy-mm-dd hh24:mi:ss'),'','采购部','牛采购','','朱会计','');
 
-//预付款详表（t_PayInAdvance_detailed）
+--预付款详表（t_PayInAdvance_detailed）
 create table t_PayInAdvance_detailed(
 FundBillID  varchar2(20)  primary key,
 Linenumber int,
@@ -123,7 +123,7 @@ INSERT into t_PayInAdvance_detailed(FundBillID,Linenumber,Sourcelist,Sourcenumbe
 VALUES('2018112903','1','','2018112903','1000.00','支付30%预定金');
 
 
-//应付款明细表（t_AccountsPayable_detailed）
+--应付款明细表（t_AccountsPayable_detailed）
 create table t_AccountsPayable_detailed(
 Originalamount Number(*,2) ,
 Currentamount Number(*,2),
@@ -140,7 +140,7 @@ VALUES('9999','8000','进货','2018112902','001',TO_DATE('2018-11-29','yyyy-mm-dd 
 
 
 
-//人员主文件（t_personnel）
+--人员主文件（t_personnel）
 create table t_personnel(
 PersonID varchar2(20)  primary key,
 DepartID varchar2(20),
