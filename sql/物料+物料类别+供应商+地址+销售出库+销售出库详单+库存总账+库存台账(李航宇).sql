@@ -1,3 +1,4 @@
+/* 物料主文件 */
 create table T_DSPRODUCT
 (
 	PRODID VARCHAR2(20) not null
@@ -5,44 +6,44 @@ create table T_DSPRODUCT
 	CLASSID VARCHAR2(20) not null,
 	CLASSNAME VARCHAR2(20) not null,
 	PRODNAME VARCHAR2(20) not null,
-	UNITID NUMBER(22) not null,
+	UNITID VARCHAR2(20) default NULL not null,
 	UNIT VARCHAR2(20) not null,
 	PRODSIZE VARCHAR2(20),
 	BARCODEID VARCHAR2(20),
 	ENGNAME VARCHAR2(20),
-	SUGGESTPRICE NUMBER default 0.00  not null,
-	SALESPRICEA NUMBER default 0.00  not null,
-	SALESPRICEB NUMBER default 0.00  not null,
-	SALESPRICEC NUMBER default 0.00  not null,
-	SALESPRICED NUMBER default 0.00  not null,
-	SALESPRICEE NUMBER default 0.00  not null,
-	STDPRICE NUMBER default 0.00  not null,
+	SUGGESTPRICE NUMBER default 0.00 not null,
+	SALESPRICEA NUMBER default 0.00 not null,
+	SALESPRICEB NUMBER default 0.00 not null,
+	SALESPRICEC NUMBER default 0.00 not null,
+	SALESPRICED NUMBER default 0.00 not null,
+	SALESPRICEE NUMBER default 0.00 not null,
+	STDPRICE NUMBER default 0.00 not null,
 	CURRID VARCHAR2(20) not null,
 	CURRNAME VARCHAR2(20) not null,
 	PRODFORM VARCHAR2(20),
-	PRICEOFTAX NUMBER(1) default 0        not null,
+	PRICEOFTAX NUMBER(1) default 0 not null,
 	TAXITEMSID VARCHAR2(20),
 	TAXITEMSNAME VARCHAR2(20),
 	BUSITAXRATE NUMBER default 17.00 not null,
-	ADVANCEDAYS NUMBER(22) default 0       not null,
+	ADVANCEDAYS NUMBER(22) default 0 not null,
 	MAJORSUPPLIER VARCHAR2(20),
 	MAJORSUPPLIERNAME VARCHAR2(20),
 	BATCHUSED NUMBER(1),
 	EFFECTDATEUSED NUMBER(1),
 	VALIDDATEUSED NUMBER(1),
-	DEFVAKLIDDAY NUMBER(22) default 0       not null,
-	SAFEQTY NUMBER(22) default 0       not null,
-	BSTDCOST NUMBER,
+	DEFVAKLIDDAY NUMBER(22) default 0 not null,
+	SAFEQTY NUMBER(22) default 0 not null,
+	BSTDCOST NUMBER default 0.00,
 	BOUTSTOCKDAY DATE,
 	BINSTOCKDAY DATE,
-	SLUGGISHDAYS NUMBER(22) default 0       not null,
+	SLUGGISHDAYS NUMBER(22) default 0 not null,
 	INVALIDDATE DATE,
 	UDEF1 VARCHAR2(20),
 	UDEF2 VARCHAR2(20),
 	PRODDESC VARCHAR2(255)
 )
 /
-
+/* 物料类别 */
 create table T_DSPRODUCTCLASS
 (
 	CLASSID VARCHAR2(20) not null
@@ -68,7 +69,7 @@ create table T_DSPRODUCTCLASS
 	MOME VARCHAR2(255)
 )
 /
-
+/* 销售出库单主表 */
 create table T_DSDSSALEMAIN
 (
 	BILLNO VARCHAR2(20) not null
@@ -101,7 +102,7 @@ create table T_DSDSSALEMAIN
 	PERMITTERNAME VARCHAR2(20)
 )
 /
-
+/* 销售出库单详表 */
 create table T_DSDSSALESUB
 (
 	BILLNO VARCHAR2(20) not null,
@@ -127,7 +128,7 @@ create table T_DSDSSALESUB
 	CUSTBILLNO VARCHAR2(20)
 )
 /
-
+/* 供应商主文件 */
 create table T_DSDATASET1
 (
 	ID VARCHAR2(20) not null
@@ -184,7 +185,7 @@ create table T_DSDATASET1
 	MEMO VARCHAR2(255)
 )
 /
-
+/* 供应商地址 */
 create table T_DSDATASET2
 (
 	ID VARCHAR2(20) not null,
@@ -200,7 +201,7 @@ create table T_DSDATASET2
 	MEMO VARCHAR2(255)
 )
 /
-
+/* 库存台账 */
 create table T_DSDSWARETRANSACTION
 (
 	TRANTYPE VARCHAR2(20) not null,
@@ -215,7 +216,7 @@ create table T_DSDSWARETRANSACTION
 	BILLDATE DATE not null
 )
 /
-
+/* 库存总账 */
 create table T_DSDSWAREAMOUNT
 (
 	WAREHOUSEID VARCHAR2(20) not null,
