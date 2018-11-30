@@ -48,7 +48,8 @@ create table t_ detail_ modifyprice
   WhLinkMan	Varchar(20) not null,
   WhTelephone	Varchar(20) not null,
   WhWareHouseAddres	Varchar(20) not null,
-  WhMemo	Varchar(20)
+  WhMemo	Varchar(20),
+  ModPricestate number(1)
 );
 
 /*销售订单表*/
@@ -69,7 +70,8 @@ create table t_ salesorder
   DepartID	Varchar(20) not null,
   ProjectID	Varchar(20),
   Maker	Varchar(20) not null,
-  Permitter	Varchar(20) not null
+  Permitter	Varchar(20) not null,
+  ModPricestate number(1)
 );
 
 /*销售订单明细表*/
@@ -104,5 +106,6 @@ create table t_ detail _ salesorder
   FooterID	Varchar(255),
   FooterName	Varchar(255),
   CustAddField1	Varchar(255),
-  CustAddField2	Varchar(255)
+  CustAddField2	Varchar(255),
+  ModPricestate number(1)
 );
