@@ -88,7 +88,7 @@ comment on column t_Stock_Inventory_details_details.Reason is '原因';*/
 
 
 
-
+/*采购请购主表*/
 
 
 CREATE TABLE t_Purchase_purchase(
@@ -112,6 +112,28 @@ Permittersign varchar2(20) ,
 Salesid  varchar2(20),
 static number(1)
 );
+COMMENT ON table t_Purchase_purchase IS '采购请购主表';
+comment on column t_Purchase_purchase.billno is '主键';
+comment on column t_Purchase_purchase.billDate is '请购时间';
+comment on column t_Purchase_purchase.BillstyleId is '采购请购类型';
+comment on column t_Purchase_purchase.Billstatus is '单况';
+comment on column t_Purchase_purchase.Departid is '请购部门id';
+comment on column t_Purchase_purchase.Maker is '制单人员';
+comment on column t_Purchase_purchase.Permitter is '复核人员';
+comment on column t_Purchase_purchase.Remark is '备注';
+comment on column t_Purchase_purchase.Sumqty is '数量合计';
+comment on column t_Purchase_purchase.Headerid is '表头合计';
+comment on column t_Purchase_purchase.Headername is '表头条文名称';
+comment on column t_Purchase_purchase.Footerid is '表尾条文';
+comment on column t_Purchase_purchase.Footername is '表尾条文名称';
+comment on column t_Purchase_purchase.Userdef1 is '自定栏1';
+comment on column t_Purchase_purchase.Userdef2 is '自定栏2';
+comment on column t_Purchase_purchase.Makersign is '制单人签名';
+comment on column t_Purchase_purchase.Permittersign is '复核人员';
+comment on column t_Purchase_purchase.Salesid is '请购人员id';
+comment on column t_Purchase_purchase.static is '状态';
+
+
 
 
 select * from t_Purchase_purchase;
@@ -122,7 +144,7 @@ insert into t_Purchase_purchase(billno,billDate,BillstyleId,Billstatus,Departid,
 
 
 select * from t_Purchase_purchase
-
+/*采购请购详表*/
 CREATE TABLE t_Purchase_purchase_details(
  billno varchar2(20) primary key,
  purchaseid varchar2(20),
@@ -133,9 +155,19 @@ CREATE TABLE t_Purchase_purchase_details(
  Purchasevolume  NUMBER(20),
  Entrynotes varchar2(255),
  Sourcelist varchar2(20),
- Sourcenumber varchar2(20));
-
-
+ Sourcenumber varchar2(20)
+ );
+COMMENT ON table t_Purchase_purchase_details IS '采购请购详表';
+comment on column t_Purchase_purchase_details.billno is '主键';
+comment on column t_Purchase_purchase_details.purchaseid is '采购外键';
+comment on column t_Purchase_purchase_details.Prodid is '物料编号';
+comment on column t_Purchase_purchase_details.Sum1 is '数量';
+comment on column t_Purchase_purchase_details.Demanddate is '需求日期';
+comment on column t_Purchase_purchase_details.Procurementdate is '建议采购日期';
+comment on column t_Purchase_purchase_details.Purchasevolume is '未采购量';
+comment on column t_Purchase_purchase_details.Entrynotes is '分录备注';
+comment on column t_Purchase_purchase_details.Sourcelist is '来源单号';
+comment on column t_Purchase_purchase_details.Sourcenumber is '主键';
 select * from t_Purchase_purchase_details
 
 insert into t_Purchase_purchase_details(billno,purchaseid,Prodid,Sum1,Demanddate,Procurementdate,Purchasevolume,Entrynotes,Sourcelist,Sourcenumber)values('20181129001','20181129001','20181129001',200,sysdate,sysdate,200,'555','20181129001','销售订单');
